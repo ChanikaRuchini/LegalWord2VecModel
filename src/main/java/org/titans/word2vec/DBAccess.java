@@ -1,3 +1,5 @@
+package org.titans.word2vec;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;

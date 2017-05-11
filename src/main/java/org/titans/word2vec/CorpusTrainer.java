@@ -1,6 +1,7 @@
+package org.titans.word2vec;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
 import java.io.PrintWriter;
 import java.sql.ResultSet;
 import java.sql.SQLException;
