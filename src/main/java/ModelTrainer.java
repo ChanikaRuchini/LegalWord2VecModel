@@ -50,9 +50,8 @@ public class ModelTrainer {
 
         log.info("Writing word vectors to text file....");
 
-        // Write word vectors to file
-        WordVectorSerializer.writeWordVectors(vec, "C:\\Users\\User\\Desktop\\vectorModel.txt");
-
+        // Write word model to file
+        WordVectorSerializer.writeFullModel(vec, "C:\\Users\\User\\Desktop\\LegalWord2VecModel");
         // Prints out the closest 10 words to "case". An example on what to do with these Word Vectors.
         log.info("Closest Words:");
         Collection<String> lst = vec.wordsNearest("case", 10);

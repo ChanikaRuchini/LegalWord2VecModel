@@ -20,13 +20,55 @@ public class CorpusTrainer {
             log.error(ex.getMessage());
         }
         PrintWriter writer = new PrintWriter("C:\\Users\\User\\Desktop\\textCorpus.txt", "UTF-8");
-        getCases(writer);
+        getCasesContent(writer);
+        getCasesSummary(writer);
+        getFootNoteContent(writer);
         writer.close();
     }
 
-    public static String getCases(PrintWriter writer) {
+    public static String getCasesContent(PrintWriter writer) {
         ResultSet rs = null;
         String str="SELECT content FROM cases";
+        try {
+            rs = DBAccess.getData(dbconnection.getConnectionToDB(),str);
+            while (rs.next()){
+                try {
+                    String content =rs.getString("content");
+
+                    WriteToFile(content, writer);
+                } catch (SQLException ex) {
+                    log.error(ex.getMessage());
+                }
+            }
+        } catch (SQLException ex) {
+            log.error(ex.getMessage());
+        }
+        return null;
+    }
+
+    public static String getCasesSummary(PrintWriter writer) {
+        ResultSet rs = null;
+        String str="SELECT summary FROM cases";
+        try {
+            rs = DBAccess.getData(dbconnection.getConnectionToDB(),str);
+            while (rs.next()){
+                try {
+                    String content =rs.getString("summary");
+
+                    WriteToFile(content, writer);
+                } catch (SQLException ex) {
+                    log.error(ex.getMessage());
+                }
+            }
+        } catch (SQLException ex) {
+            log.error(ex.getMessage());
+        }
+        return null;
+    }
+
+    public static String getFootNoteContent(PrintWriter writer) {
+        ResultSet rs = null;
+        String str="SELECT content FROM foot_notes";
         try {
             rs = DBAccess.getData(dbconnection.getConnectionToDB(),str);
             while (rs.next()){
