@@ -9,7 +9,7 @@ import java.io.File;
 import java.util.Collection;
 
 /**
- * Created by Buddhi on 5/11/2017.
+ * @author Vindula Jayawaradana
  */
 public class UseModel {
 

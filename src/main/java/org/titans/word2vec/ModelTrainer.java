@@ -14,7 +14,7 @@ import org.slf4j.LoggerFactory;
 import java.io.File;
 
 /**
- * Created by Buddhi on 5/11/2017.
+ * @author Vindula Jayawaradana
  */
 public class ModelTrainer {
 
